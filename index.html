@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FF Max Redeem Codes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-      button {
-        background-color:Red;
-        color: blue;
-      }
-             
-   .fixed-button {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random Code Box</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f0f0f;
+      color: #00FFAA;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .code-box {
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .code-box h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #00ffaa;
+    }
+
+    .random-numbers {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 2;
+      letter-spacing: 2px;
+      word-spacing: 8px;
+      white-space: pre-line;
+    }
+
+        .fixed-button {
   position: fixed;
   bottom: 10px;
   left: 35%;
@@ -28,51 +54,38 @@
   font-weight: bold;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   cursor: pointer;
-}
- 
-      
-        .random-numbers {
-              position: absolute;
-              top:35px;
-            font-size: 24px;
-            font-weight: bold;
-            line-height: 15;
-        }
-    </style>
+        }
+        
+  </style>
 </head>
 <body>
-    <button>Top 25 Free Fire Max Redeem Codes</button>
-    <div id="randomNumbers" class="random-numbers"></div>
+  <div class="code-box">
+    <h1>Random Codes</h1>
+    <div id="randomNumbers" class="random-numbers"></div>
+  </div>
 
+  <script>
+    function generateRandomString(length) {
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      let result = '';
+      for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        result += characters[randomIndex];
+      }
+      return result.match(/.{1,4}/g).join(' ');
+    }
 
-    <script>
-        function generateRandomString(length) {
-            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            let result = '';
-            for (let i = 0; i < length; i++) {
-                const randomIndex = Math.floor(Math.random() * characters.length);
-                result += characters[randomIndex];
-            }
-              // Add space after every 4 characters
-    return result.match(/.{1,4}/g).join(' ');
-        }
+    function displayRandomNumbers() {
+      let randomNumbers = '';
+      for (let i = 0; i < 25; i++) {
+        randomNumbers += generateRandomString(16) + '\n';
+      }
+      document.getElementById('randomNumbers').textContent = randomNumbers;
+    }
 
-
-        function displayRandomNumbers() {
-            let randomNumbers = '';
-            for (let i = 0; i < 25; i++) {
-                randomNumbers += generateRandomString(12) + '<br>';
-            }
-            document.getElementById('randomNumbers').innerHTML = randomNumbers;
-        }
-
-
-        // Display random numbers on page load
-        window.onload = displayRandomNumbers;
-    </script>
-      
-      <div class="fixed-button"> Aditya Singh Chandel</div>
+    window.onload = displayRandomNumbers;
+  </script>
+<div class="fixed-button">Aditya Singh Chandel</div>
       
 </body>
 </html>
-
