@@ -20,7 +20,7 @@
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 10px 20px;
+  padding: 10px 30px;
   background-color: #007bff;
   color: white;
   border: none;
@@ -34,7 +34,7 @@
         .random-numbers {
             font-size: 24px;
             font-weight: bold;
-            line-height: 2.5;
+            line-height: 4;
         }
     </style>
 </head>
@@ -58,7 +58,7 @@
         function displayRandomNumbers() {
             let randomNumbers = '';
             for (let i = 0; i < 25; i++) {
-                randomNumbers += generateRandomString(16) + '<br>';
+                randomNumbers += generateRandomString(12) + '<br>';
             }
             document.getElementById('randomNumbers').innerHTML = randomNumbers;
         }
@@ -67,7 +67,9 @@
         // Display random numbers on page load
         window.onload = displayRandomNumbers;
     </script>
+      
       <div class="fixed-button">Aditya Singh Chandel</div>
+      
 </body>
 </html>
 
