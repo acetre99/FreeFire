@@ -39,7 +39,7 @@
     </style>
 </head>
 <body>
-    <button>Top 20 Free Fire Max Redeem Codes</button>
+    <button>Top 25 Free Fire Max Redeem Codes</button>
     <div id="randomNumbers" class="random-numbers"></div>
 
 
@@ -51,7 +51,8 @@
                 const randomIndex = Math.floor(Math.random() * characters.length);
                 result += characters[randomIndex];
             }
-            return result;
+              // Add space after every 4 characters
+    return result.match(/.{1,4}/g).join(' ');
         }
 
 
