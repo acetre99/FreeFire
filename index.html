@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Numbers & Letters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .random-numbers {
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Numbers & Letters</h1>
+    <div id="randomNumbers" class="random-numbers"></div>
+
+
+    <script>
+        function generateRandomString(length) {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                result += characters[randomIndex];
+            }
+            return result;
+        }
+
+
+        function displayRandomNumbers() {
+            let randomNumbers = '';
+            for (let i = 0; i < 25; i++) {
+                randomNumbers += generateRandomString(16) + '<br>';
+            }
+            document.getElementById('randomNumbers').innerHTML = randomNumbers;
+        }
+
+
+        // Display random numbers on page load
+        window.onload = displayRandomNumbers;
+    </script>
+</body>
+</html>
+
